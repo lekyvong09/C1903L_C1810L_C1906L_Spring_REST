@@ -1,11 +1,11 @@
 package com.ray.springrest.controller;
 
 import com.ray.springrest.entity.Student;
-import com.ray.springrest.exception.ErrorResponse;
 import com.ray.springrest.exception.StudentNotFoundException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -41,15 +41,5 @@ public class StudentController {
     }
 
 
-    @ExceptionHandler
-    public ResponseEntity<ErrorResponse> handleException(StudentNotFoundException exception) {
-        ErrorResponse errorResponse = new ErrorResponse();
-
-        errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
-        errorResponse.setMessage(exception.getMessage());
-        errorResponse.setTimeStamp(System.currentTimeMillis());
-
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-    }
 
 }
