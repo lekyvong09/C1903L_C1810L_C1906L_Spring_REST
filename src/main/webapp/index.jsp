@@ -13,7 +13,7 @@
 <body>
     <h3>Spring REST</h3>
     <hr>
-    <a href="${pageContext.request.contextPath}/demo/hello">Hello</a>
-    <a href="${pageContext.request.contextPath}/api/students">List Student</a>
+    <a href="${pageContext.request.contextPath}/demo/hello">Hello</a><br>
+    <a href="${pageContext.request.contextPath}/api/students">List Student</a><br>
 </body>
 </html>
